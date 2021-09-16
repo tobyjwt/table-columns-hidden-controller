@@ -17,7 +17,6 @@ export default {
 
   methods: {
     __initCondition () {
-      console.log('__initCondition')
       const {
         table
       } = this.$refs
@@ -30,9 +29,6 @@ export default {
     __checkView (checked) {
       const { table } = this.$refs
       this.tableChecked = checked || table.$slots.default.map(item => item.componentOptions && item.componentOptions.propsData.label).filter(item => !!item && item !== '操作')
-      // this.$nextTick(() => {
-      //   this.$refs.table.doLayout();
-      // });
     },
 
     __getCache () {

@@ -14,22 +14,17 @@ export default {
     }
   },
   data: () => ({
-    columns: []
   }),
-  watch: {
-    checked: {
-      immediate: true,
-      handler (val) {
-        if (!this.checked) {
-          this.columns = this.$slots.default
-        } else {
-          this.columns = this.$slots.default.filter(item => (
-            val.includes(item.componentOptions && item.componentOptions.propsData.label) ||
-            !(item.componentOptions && item.componentOptions.propsData.label) ||
-            (item.componentOptions && item.componentOptions.propsData.label === '操作')
-          ))
-        }
+  computed: {
+    columns () {
+      if (!this.checked) {
+        return this.$slots.default
       }
+      return this.$slots.default.filter(item => (
+        this.checked.includes(item.componentOptions && item.componentOptions.propsData.label) ||
+        !(item.componentOptions && item.componentOptions.propsData.label) ||
+        (item.componentOptions && item.componentOptions.propsData.label === '操作')
+      ))
     }
   },
   render (h) {
