@@ -17,6 +17,7 @@
         v-for="item in columns"
         :key="item.key"
         :label="item.label"
+        align="center"
         :prop="item.key"/>
     </el-table>
   </div>
@@ -43,7 +44,9 @@ export default {
       })
       data[key] = `${key}数据`
     }
-    this.tableData.push(data)
+    for (let i = 0; i < 9; i++) {
+      this.tableData.push({ ...data })
+    }
   }
 }
 </script>
