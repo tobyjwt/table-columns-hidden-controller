@@ -142,3 +142,8 @@ export default {
 }
 ```
 控制器组件部分代码比较简单，这里就省略了
+
+[demo](https://jwentao.github.io/table-columns-hidden-controller/#/)
+
+[完整代码](https://github.com/jwentao/table-columns-hidden-controller)
+
